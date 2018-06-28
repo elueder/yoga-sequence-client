@@ -4,9 +4,11 @@
 // const example = require('./example')
 
 const authEvents = require('./auth/events')
+const poseEvents = require('./pose-api/events')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
 $(() => {
   authEvents.addHandlers()
+  poseEvents.addHandlers()
 })
