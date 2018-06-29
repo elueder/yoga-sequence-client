@@ -15,6 +15,17 @@ const createPose = function (data) {
   })
 }
 
+const getPoses = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/poses',
+    headers: {
+      Authorization: 'Token token=' + store.token
+    }
+  })
+}
+
 module.exports = {
-  createPose
+  createPose,
+  getPoses
 }

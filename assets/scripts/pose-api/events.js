@@ -14,8 +14,17 @@ const onCreatePose = function (event) {
     .catch(poseUi.createPoseError)
 }
 
+const onGetPoses = function (event) {
+  event.preventDefault()
+  console.log('got poses')
+  poseApi.getPoses()
+    .then(poseUi.getPosesSuccess)
+    .catch(poseUi.getPosesError)
+}
+
 const addHandlers = () => {
   $('#create-pose-form').on('submit', onCreatePose)
+  $('#get-poses').on('click', onGetPoses)
 }
 
 module.exports = {

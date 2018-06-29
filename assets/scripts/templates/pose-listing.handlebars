@@ -1,0 +1,13 @@
+{{#each poses as |pose|}}
+  {{log pose}}
+
+<div data-id="{{pose.id}}"><h2>Pose: {{pose.pose_name}}</h2>
+  <ul>
+    <li>Muscle action: {{pose.muscle_action}}</li>
+    <li>Cues: {{pose.cues}}</li>
+  </ul>
+  <button data-id="update-pose">Edit pose</button>
+  <button data-id="delete-pose">Delete pose</button>
+</div>
+
+{{/each}}
