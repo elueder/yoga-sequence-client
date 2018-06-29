@@ -23,9 +23,21 @@ const getPosesError = function () {
   console.log('couldnt get poses :(')
 }
 
+const updatePoseSuccess = function (poseId) {
+  console.log('updated!')
+  $('.editable, .save-pose').addClass('hidden')
+  $('.uneditable, .update-pose').removeClass('hidden')
+}
+
+const updatePoseError = function () {
+  console.log('could not update :(')
+}
+
 module.exports = {
   createPoseSuccess,
   createPoseError,
   getPosesSuccess,
-  getPosesError
+  getPosesError,
+  updatePoseSuccess,
+  updatePoseError
 }
