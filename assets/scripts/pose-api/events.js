@@ -24,7 +24,7 @@ const onGetPoses = function (event) {
 
 const onUpdatePose = function (event) {
   event.preventDefault()
-  poseUi.enableEdits()
+  poseUi.enableEdits(event)
   const poseId = event.target.getAttribute('data-id')
   const data = getFormFields(event.target)
   console.log('data is ', data)
