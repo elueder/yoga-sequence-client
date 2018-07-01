@@ -6,9 +6,9 @@ const poseUi = require('./ui')
 
 const onCreatePose = function (event) {
   event.preventDefault()
-  console.log('event.target is ', event.target)
+  // console.log('event.target is ', event.target)
   const data = getFormFields(event.target)
-  console.log('data is ', data)
+  // console.log('data is ', data)
   poseApi.createPose(data)
     .then(poseUi.createPoseSuccess)
     .catch(poseUi.createPoseError)
@@ -16,15 +16,25 @@ const onCreatePose = function (event) {
 
 const onGetPoses = function (event) {
   event.preventDefault()
-  console.log('got poses')
+  // console.log('got poses')
   poseApi.getPoses()
     .then(poseUi.getPosesSuccess)
     .catch(poseUi.getPosesError)
 }
 
+const enableEdits = function (event) {
+  event.preventDefault()
+  $(this).parent('.save-pose').children('.editable').removeClass('hidden')
+  $(this).parent('.save-pose').children('.list-edit').children('.editable').removeClass('hidden')
+  $(this).parent('.save-pose').children('.save-button').removeClass('hidden')
+  $(this).parent('.save-pose').children('.list-edit').children('.uneditable').addClass('hidden')
+  $(this).parent('.save-pose').children('.update-pose').addClass('hidden')
+}
+
 const onUpdatePose = function (event) {
   event.preventDefault()
-  poseUi.enableEdits(event)
+  console.log('event is ', event)
+  // poseUi.enableEdits(event)
   const poseId = event.target.getAttribute('data-id')
   const data = getFormFields(event.target)
   console.log('data is ', data)
@@ -33,11 +43,21 @@ const onUpdatePose = function (event) {
     .catch(poseUi.updatePoseError)
 }
 
+const onDeletePose = function (event) {
+  event.preventDefault()
+  console.log('you deleted it')
+  const poseId = event.target.getAttribute('data-id')
+  poseApi.deletePose(poseId)
+    .then(poseUi.deletePoseSuccess)
+    .catch(poseUi.deletePoseError)
+}
+
 const addHandlers = () => {
   $('#create-pose-form').on('submit', onCreatePose)
   $('#get-poses').on('click', onGetPoses)
-  $('.content').on('click', '.update-pose', poseUi.enableEdits)
+  $('.content').on('click', '.update-pose', enableEdits)
   $('.content').on('submit', '.save-pose', onUpdatePose)
+  $('.content').on('click', '.delete-pose', onDeletePose)
 }
 
 module.exports = {

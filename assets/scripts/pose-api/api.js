@@ -26,8 +26,6 @@ const getPoses = function () {
 }
 
 const updatePose = function (data, poseId) {
-  console.log('poseId is ', poseId)
-  console.log('data is ', data)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/poses/' + poseId,
@@ -38,8 +36,19 @@ const updatePose = function (data, poseId) {
   })
 }
 
+const deletePose = function (poseId) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/poses/' + poseId,
+    headers: {
+      Authorization: 'Token token=' + store.token
+    }
+  })
+}
+
 module.exports = {
   createPose,
   getPoses,
-  updatePose
+  updatePose,
+  deletePose
 }
