@@ -22,21 +22,11 @@ const onGetPoses = function (event) {
     .catch(poseUi.getPosesError)
 }
 
-const enableEdits = function (event) {
-  event.preventDefault()
-  $('.editable, .save-button').removeClass('hidden')
-  $('.uneditable, .update-pose').addClass('hidden')
-}
-
 const onUpdatePose = function (event) {
   event.preventDefault()
-  // console.log('element is ', event.target.getAttribute('data-id'))
+  poseUi.enableEdits()
   const poseId = event.target.getAttribute('data-id')
-  // console.log('poseId is ', poseId)
   const data = getFormFields(event.target)
-  const targetedHidden = event.target.childElement
-  console.log('targetedHidden is ', targetedHidden)
-  // debugger
   console.log('data is ', data)
   poseApi.updatePose(data, poseId)
     .then(poseUi.updatePoseSuccess)
@@ -46,7 +36,7 @@ const onUpdatePose = function (event) {
 const addHandlers = () => {
   $('#create-pose-form').on('submit', onCreatePose)
   $('#get-poses').on('click', onGetPoses)
-  $('.content').on('click', '.update-pose', enableEdits)
+  $('.content').on('click', '.update-pose', poseUi.enableEdits)
   $('.content').on('submit', '.save-pose', onUpdatePose)
 }
 

@@ -6,7 +6,7 @@
     <form class="save-pose" data-id="{{pose.id}}">
       <h2>Pose: {{pose.pose_name}}</h2>
       <input name="pose[pose_name]" class="hidden editable" type="text" value="{{pose.pose_name}}">
-      <ul>
+      <ul class="list-edit">
         <li class="uneditable">Muscle action: {{pose.muscle_action}}</li>
         <input name="pose[muscle_action]" class="hidden editable" type="text" value="{{pose.muscle_action}}">
         <li class="uneditable">Cues: {{pose.cues}}</li>
