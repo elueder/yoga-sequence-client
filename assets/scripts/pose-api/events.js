@@ -10,9 +10,9 @@ const onCreatePose = function (event) {
   const data = getFormFields(event.target)
   // console.log('data is ', data)
   poseApi.createPose(data)
-    .then(poseUi.createPoseSuccess)
     .then(poseApi.getPoses)
     .then(poseUi.getPosesSuccess)
+    .then(poseUi.createPoseSuccess)
     .catch(poseUi.createPoseError)
 }
 
@@ -39,9 +39,9 @@ const onUpdatePose = function (event) {
   const poseId = event.target.getAttribute('data-id')
   const data = getFormFields(event.target)
   poseApi.updatePose(data, poseId)
-    .then(poseUi.updatePoseSuccess)
     .then(poseApi.getPoses)
     .then(poseUi.getPosesSuccess)
+    .then(poseUi.updatePoseSuccess)
     .catch(poseUi.updatePoseError)
 }
 
@@ -50,9 +50,9 @@ const onDeletePose = function (event) {
   console.log('you deleted it')
   const poseId = event.target.getAttribute('data-id')
   poseApi.deletePose(poseId)
-    .then(poseUi.deletePoseSuccess)
     .then(poseApi.getPoses)
     .then(poseUi.getPosesSuccess)
+    .then(poseUi.deletePoseSuccess)
     .catch(poseUi.deletePoseError)
 }
 

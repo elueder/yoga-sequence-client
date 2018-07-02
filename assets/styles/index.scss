@@ -68,3 +68,8 @@ input {
   color: $text-color;
   font-family: $default-font;
 }
+
+#user-messages {
+  display: block;
+  clear: both;
+}

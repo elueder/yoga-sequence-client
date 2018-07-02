@@ -5,7 +5,7 @@ const showPosesTemplate = require('../templates/pose-listing.handlebars')
 
 const createPoseSuccess = function () {
   $('#user-messages').html('')
-  $('.content').html('')
+  // $('.content').html('')
   $('#user-messages').html(`
     <div class="alert alert-success alert-dismissable">
     <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
