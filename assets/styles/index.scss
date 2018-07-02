@@ -6,38 +6,45 @@ $background-color: #f4f4f4;
 $btn-color: #d2d1d1;
 $text-color: #082565;
 $accent: #f0f3ff;
+$default-font: 'Helvetica';
 
 body {
   background-color: $background-color;
   color: $text-color;
+  font-family: $default-font;
 }
 
 h1 {
-  float: left;
   color: $text-color;
+  float: left;
+  font-family: $default-font;
 }
 
 h3 {
   display: inline;
   color: $text-color;
+  font-family: $default-font;
 }
 
 .btn {
   background-color: $btn-color;
   color: $text-color;
+  font-family: $default-font;
 }
 
 .user-forms {
   align-content: right;
+  color: $text-color;
+  float: right;
+  font-family: $default-font;
   margin: 5px;
   padding: 5px;
-  float: right;
   width: auto;
-  color: $text-color;
 }
 
 .user {
   color: $text-color;
+  font-family: $default-font;
   margin: 5px;
 }
 
@@ -45,13 +52,19 @@ h3 {
   color: $text-color;
   display: block;
   float: left;
+  font-family: $default-font;
   margin: 5px;
 }
 
 .content {
-  // background-color: $accent;
   clear: both;
   color: $text-color;
   display: block;
+  font-family: $default-font;
   margin-top: 10px;
+}
+
+input {
+  color: $text-color;
+  font-family: $default-font;
 }
