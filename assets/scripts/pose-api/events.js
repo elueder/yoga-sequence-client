@@ -34,10 +34,8 @@ const enableEdits = function (event) {
 const onUpdatePose = function (event) {
   event.preventDefault()
   console.log('event is ', event)
-  // poseUi.enableEdits(event)
   const poseId = event.target.getAttribute('data-id')
   const data = getFormFields(event.target)
-  console.log('data is ', data)
   poseApi.updatePose(data, poseId)
     .then(poseUi.updatePoseSuccess)
     .catch(poseUi.updatePoseError)

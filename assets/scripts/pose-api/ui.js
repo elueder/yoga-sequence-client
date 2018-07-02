@@ -27,6 +27,9 @@ const updatePoseSuccess = function (data, poseId) {
   // console.log('updated!')
   $('.editable, .save-pose').addClass('hidden')
   $('.uneditable, .update-pose').removeClass('hidden')
+  debugger
+  const showPoseHtml = showPosesTemplate({ poses: data.pose })
+  $('.content').html(showPoseHtml)
   // const showPosesHtml = showPosesTemplate({ poses: data.poses })
   // $('.content').html(showPosesHtml)
 }

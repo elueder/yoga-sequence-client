@@ -21,6 +21,7 @@ const onSignIn = function (event) {
   authApi.signIn(data)
     .then(authUi.signInSuccess)
     .catch(authUi.signInError)
+  authUi.signedInState()
 }
 
 const onChangePassword = function (event) {
@@ -37,6 +38,7 @@ const onSignOut = function (event) {
   authApi.signOut(data)
     .then(authUi.signOutSuccess)
     .catch(authUi.signOutFail)
+  authUi.signedOutState()
 }
 
 const addHandlers = () => {

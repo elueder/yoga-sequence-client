@@ -40,6 +40,16 @@ const changePasswordError = function () {
   // console.log('couldnt change pwd')
 }
 
+const signedInState = function () {
+  $('#change-password-form, #sign-out, #get-poses').removeClass('hidden')
+  $('#sign-up-form, #sign-in-form').addClass('hidden')
+}
+
+const signedOutState = function () {
+  $('#sign-up-form, #sign-in-form').removeClass('hidden')
+  $('#change-password-form, #sign-out, #game-board, #num-of-games, #new-game, #games-show').addClass('hidden')
+}
+
 module.exports = {
   signUpSuccess,
   signUpError,
@@ -48,5 +58,7 @@ module.exports = {
   signOutSuccess,
   signOutError,
   changePasswordSuccess,
-  changePasswordError
+  changePasswordError,
+  signedInState,
+  signedOutState
 }

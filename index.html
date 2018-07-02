@@ -31,20 +31,20 @@
     <button class="btn btn-default" type="submit">Sign In</button>
   </form>
 
-  <form id="change-password-form" class="form-inline">
+  <form id="change-password-form" class="form-inline hidden">
     <h3 class="form-titles">Change Password</h3>
     <input type="password" name="passwords[old]" placeholder="Old Password" class="form-control">
     <input type="password" name="passwords[new]" placeholder="New Password" class="form-control">
     <button class="btn btn-default" type="submit">Change it up</button>
   </form>
 
-  <form id="sign-out" class="form-inline">
+  <form id="sign-out" class="form-inline hidden">
     <h3 class="form-titles">Sign Out</h3>
     <button class="btn btn-default" type="submit">Sign Out</button>
   </form>
 </body>
 
-<form id="create-pose-form" class="form-inline">
+<form id="create-pose-form" class="form-inline hidden">
   <h3 class="form-titles">Create Yoga Pose</h3>
   <input name="pose[pose_name]" type="text" class="form-control" placeholder="Pose name">
   <input name="pose[muscle_action]" type="text" class="form-control" placeholder="Muscle action">
@@ -52,7 +52,7 @@
   <button class="btn btn-default" type="submit">Make a pose</button>
 </form>
 
-<form id="get-poses">
+<form id="get-poses" class="hidden">
   <button class="btn btn-default">Get all poses</button>
 </form>
 
