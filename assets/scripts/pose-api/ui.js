@@ -4,7 +4,7 @@ const store = require('../store')
 const showPosesTemplate = require('../templates/pose-listing.handlebars')
 
 const createPoseSuccess = function () {
-  // console.log('pose created!')
+  $('#user-messages').html('Pose created!')
   document.getElementById('sign-up-form').reset()
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()
@@ -44,8 +44,8 @@ const updatePoseSuccess = function (data, poseId) {
   $('.editable, .save-pose').addClass('hidden')
   $('.uneditable, .update-pose').removeClass('hidden')
   // debugger
-  const showPoseHtml = showPosesTemplate({ poses: data.pose })
-  $('.content').html(showPoseHtml)
+  // const showPoseHtml = showPosesTemplate({ poses: data.pose })
+  // $('.content').html(showPoseHtml)
   document.getElementById('sign-up-form').reset()
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()
@@ -53,7 +53,7 @@ const updatePoseSuccess = function (data, poseId) {
 }
 
 const updatePoseError = function () {
-  console.log('could not update :(')
+  // console.log('could not update :(')
   document.getElementById('sign-up-form').reset()
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()
@@ -61,7 +61,7 @@ const updatePoseError = function () {
 }
 
 const deletePoseSuccess = function () {
-  console.log('yippee deleted')
+  // console.log('yippee deleted')
   document.getElementById('sign-up-form').reset()
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()
@@ -69,7 +69,7 @@ const deletePoseSuccess = function () {
 }
 
 const deletePoseError = function () {
-  console.log('couldnt delete :(')
+  // console.log('couldnt delete :(')
   document.getElementById('sign-up-form').reset()
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()
