@@ -4,7 +4,14 @@ const store = require('../store')
 const showPosesTemplate = require('../templates/pose-listing.handlebars')
 
 const createPoseSuccess = function () {
-  $('#user-messages').html('Pose created!')
+  $('#user-messages').html('')
+  $('.content').html('')
+  $('#user-messages').html(`
+    <div class="alert alert-success alert-dismissable">
+    <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+    Pose created!
+    </div>
+    `)
   document.getElementById('sign-up-form').reset()
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()
@@ -12,7 +19,12 @@ const createPoseSuccess = function () {
 }
 
 const createPoseError = function () {
-  // console.log('pose couldnt be created :(')
+  $('#user-messages').html('')
+  $('.content').html('')
+  $('#user-messages').html(`div class="alert alert-warning">
+    <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+    Error creating pose.
+    </div>`)
   document.getElementById('sign-up-form').reset()
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()
@@ -20,9 +32,8 @@ const createPoseError = function () {
 }
 
 const getPosesSuccess = function (data) {
-  // console.log('got poses')
-  // console.log('data is ', data)
-  // console.log('data.poses is ', data.poses)
+  $('#user-messages').html('')
+  $('.content').html('')
   const showPosesHtml = showPosesTemplate({ poses: data.poses })
   $('.content').html(showPosesHtml)
   document.getElementById('sign-up-form').reset()
@@ -32,7 +43,12 @@ const getPosesSuccess = function (data) {
 }
 
 const getPosesError = function () {
-  // console.log('couldnt get poses :(')
+  $('#user-messages').html('')
+  $('.content').html('')
+  $('#user-messages').html(`div class="alert alert-warning">
+    <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+    Error loading poses.
+    </div>`)
   document.getElementById('sign-up-form').reset()
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()
@@ -40,7 +56,13 @@ const getPosesError = function () {
 }
 
 const updatePoseSuccess = function (data, poseId) {
-  // console.log('updated!')
+  $('#user-messages').html('')
+  $('.content').html('')
+  $('#user-messages').html(`
+    <div class="alert alert-success alert-dismissable">
+    <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+    Pose updated!</div>
+    `)
   $('.editable, .save-pose').addClass('hidden')
   $('.uneditable, .update-pose').removeClass('hidden')
   // debugger
@@ -53,7 +75,12 @@ const updatePoseSuccess = function (data, poseId) {
 }
 
 const updatePoseError = function () {
-  // console.log('could not update :(')
+  $('#user-messages').html('')
+  $('.content').html('')
+  $('#user-messages').html(`div class="alert alert-warning">
+    <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+    Error updating pose.
+    </div>`)
   document.getElementById('sign-up-form').reset()
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()
@@ -61,7 +88,13 @@ const updatePoseError = function () {
 }
 
 const deletePoseSuccess = function () {
-  // console.log('yippee deleted')
+  $('#user-messages').html('')
+  $('.content').html('')
+  $('#user-messages').html(`
+    <div class="alert alert-success alert-dismissable">
+    <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+    Pose deleted!</div>
+    `)
   document.getElementById('sign-up-form').reset()
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()
@@ -69,7 +102,12 @@ const deletePoseSuccess = function () {
 }
 
 const deletePoseError = function () {
-  // console.log('couldnt delete :(')
+  $('#user-messages').html('')
+  $('.content').html('')
+  $('#user-messages').html(`div class="alert alert-warning">
+    <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+    Error deleting pose.
+    </div>`)
   document.getElementById('sign-up-form').reset()
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()

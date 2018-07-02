@@ -1,2 +1,57 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$background-color: #f4f4f4;
+$btn-color: #d2d1d1;
+$text-color: #082565;
+$accent: #f0f3ff;
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+h1 {
+  float: left;
+  color: $text-color;
+}
+
+h3 {
+  display: inline;
+  color: $text-color;
+}
+
+.btn {
+  background-color: $btn-color;
+  color: $text-color;
+}
+
+.user-forms {
+  align-content: right;
+  margin: 5px;
+  padding: 5px;
+  float: right;
+  width: auto;
+  color: $text-color;
+}
+
+.user {
+  color: $text-color;
+  margin: 5px;
+}
+
+.pose-forms {
+  color: $text-color;
+  display: block;
+  float: left;
+  margin: 5px;
+}
+
+.content {
+  // background-color: $accent;
+  clear: both;
+  color: $text-color;
+  display: block;
+  margin-top: 10px;
+}

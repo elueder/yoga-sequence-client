@@ -14,50 +14,56 @@
 </head>
 
 <body>
-  <h1>Your Yoga Sequencing Pal</h1>
+  <div class="container-fluid">
+    <h1>Your Yoga Sequencing Pal</h1>
 
-  <form id="sign-up-form" class="form-inline">
-    <h3 class="form-titles">Sign Up!</h3>
-    <input name="credentials[email]" type="text" placeholder="Email" class="form-control">
-    <input name="credentials[password]" type="password" placeholder="Password" class="form-control">
-    <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="form-control">
-    <button class="btn btn-default" type="submit">Sign Up</button>
-  </form>
+    <div class="user-forms">
+      <form id="sign-up-form" class="form-inline user">
+        <h3 class="form-titles">Sign Up!</h3>
+        <input name="credentials[email]" type="text" placeholder="Email" class="form-control">
+        <input name="credentials[password]" type="password" placeholder="Password" class="form-control">
+        <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="form-control">
+        <button class="btn btn-default" type="submit">Sign Up</button>
+      </form>
 
-  <form id="sign-in-form" class="form-inline">
-    <h3 class="form-titles">Sign In!</h3>
-    <input name="credentials[email]" type="text" placeholder="Email" class="form-control">
-    <input name="credentials[password]" type="password" placeholder="Password" class="form-control">
-    <button class="btn btn-default" type="submit">Sign In</button>
-  </form>
+      <form id="sign-in-form" class="form-inline user">
+        <h3 class="form-titles">Sign In!</h3>
+        <input name="credentials[email]" type="text" placeholder="Email" class="form-control">
+        <input name="credentials[password]" type="password" placeholder="Password" class="form-control">
+        <button class="btn btn-default" type="submit">Sign In</button>
+      </form>
 
-  <div id="user-messages"></div>
+      <form id="change-password-form" class="form-inline hidden user">
+        <h3 class="form-titles">Change Password</h3>
+        <input type="password" name="passwords[old]" placeholder="Old Password" class="form-control">
+        <input type="password" name="passwords[new]" placeholder="New Password" class="form-control">
+        <button class="btn btn-default" type="submit">Change it up</button>
+      </form>
 
-  <form id="change-password-form" class="form-inline hidden">
-    <h3 class="form-titles">Change Password</h3>
-    <input type="password" name="passwords[old]" placeholder="Old Password" class="form-control">
-    <input type="password" name="passwords[new]" placeholder="New Password" class="form-control">
-    <button class="btn btn-default" type="submit">Change it up</button>
-  </form>
+      <form id="sign-out" class="form-inline hidden user">
+        <h3 class="form-titles">Sign Out</h3>
+        <button class="btn btn-default" type="submit">Sign Out</button>
+      </form>
+    </div>
 
-  <form id="sign-out" class="form-inline hidden">
-    <h3 class="form-titles">Sign Out</h3>
-    <button class="btn btn-default" type="submit">Sign Out</button>
-  </form>
+    <div id="user-messages"></div>
 
-  <form id="create-pose-form" class="form-inline hidden">
-    <h3 class="form-titles">Create Yoga Pose</h3>
-    <input name="pose[pose_name]" type="text" class="form-control" placeholder="Pose name">
-    <input name="pose[muscle_action]" type="text" class="form-control" placeholder="Muscle action">
-    <input name="pose[cues]" type="text" class="form-control" placeholder="Cues">
-    <button class="btn btn-default" type="submit">Make a pose</button>
-  </form>
+    <div class="pose-forms">
+      <form id="create-pose-form" class="form-inline hidden">
+        <h3 class="form-titles">Create Yoga Pose</h3>
+        <input name="pose[pose_name]" type="text" class="form-control" placeholder="Pose name">
+        <input name="pose[muscle_action]" type="text" class="form-control" placeholder="Muscle action">
+        <input name="pose[cues]" type="text" class="form-control" placeholder="Cues">
+        <button class="btn btn-default" type="submit">Make a pose</button>
+      </form>
 
-  <form id="get-poses" class="hidden">
-    <button class="btn btn-default">Get all poses</button>
-  </form>
+      <form id="get-poses" class="hidden">
+        <button class="btn btn-default">Get all poses</button>
+      </form>
+    </div>
 
-  <div class="content">
+    <div class="content">
+    </div>
   </div>
 </body>
 
