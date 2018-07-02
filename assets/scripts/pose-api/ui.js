@@ -34,8 +34,18 @@ const createPoseError = function () {
 const getPosesSuccess = function (data) {
   $('#user-messages').html('')
   $('.content').html('')
+  // debugger
   const showPosesHtml = showPosesTemplate({ poses: data.poses })
-  $('.content').html(showPosesHtml)
+  if (data.poses.length === 0) {
+    $('#user-messages').html(`
+      <div class="alert alert-success alert-dismissable">
+      <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+      You haven't created any poses!
+      </div>
+      `)
+  } else {
+    $('.content').html(showPosesHtml)
+  }
   document.getElementById('sign-up-form').reset()
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()
