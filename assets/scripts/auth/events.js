@@ -20,8 +20,8 @@ const onSignIn = function (event) {
   // console.log('data is ', data)
   authApi.signIn(data)
     .then(authUi.signInSuccess)
+    .then(authUi.signedInState)
     .catch(authUi.signInError)
-  authUi.signedInState()
 }
 
 const onChangePassword = function (event) {
