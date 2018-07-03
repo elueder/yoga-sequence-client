@@ -5,7 +5,6 @@ const showPosesTemplate = require('../templates/pose-listing.handlebars')
 
 const createPoseSuccess = function () {
   $('#user-messages').html('')
-  // $('.content').html('')
   $('#user-messages').html(`
     <div class="alert alert-success alert-dismissable">
     <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
@@ -67,17 +66,11 @@ const getPosesError = function () {
 
 const updatePoseSuccess = function (data, poseId) {
   $('#user-messages').html('')
-  $('.content').html('')
   $('#user-messages').html(`
     <div class="alert alert-success alert-dismissable">
     <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
     Pose updated!</div>
     `)
-  $('.editable, .save-pose').addClass('hidden')
-  $('.uneditable, .update-pose').removeClass('hidden')
-  // debugger
-  // const showPoseHtml = showPosesTemplate({ poses: data.pose })
-  // $('.content').html(showPoseHtml)
   document.getElementById('sign-up-form').reset()
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()
@@ -99,7 +92,6 @@ const updatePoseError = function () {
 
 const deletePoseSuccess = function () {
   $('#user-messages').html('')
-  $('.content').html('')
   $('#user-messages').html(`
     <div class="alert alert-success alert-dismissable">
     <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
@@ -129,7 +121,6 @@ module.exports = {
   createPoseError,
   getPosesSuccess,
   getPosesError,
-  // enableEdits,
   updatePoseSuccess,
   updatePoseError,
   deletePoseSuccess,

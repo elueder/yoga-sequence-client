@@ -27,15 +27,15 @@ const onGetPoses = function (event) {
 const enableEdits = function (event) {
   event.preventDefault()
   $(this).parent('.save-pose').children('.editable').removeClass('hidden')
-  $(this).parent('.save-pose').children('.list-edit').children('.editable').removeClass('hidden')
+  $(this).parent('.save-pose').children('.list-edit').children('.uneditable').children('.editable').removeClass('hidden')
   $(this).parent('.save-pose').children('.save-button').removeClass('hidden')
-  $(this).parent('.save-pose').children('.list-edit').children('.uneditable').addClass('hidden')
+  $(this).parent('.save-pose').children('.list-edit').children('.uneditable').children('.current-val').addClass('hidden')
   $(this).parent('.save-pose').children('.update-pose').addClass('hidden')
 }
 
 const onUpdatePose = function (event) {
   event.preventDefault()
-  console.log('event is ', event)
+  // console.log('event is ', event)
   const poseId = event.target.getAttribute('data-id')
   const data = getFormFields(event.target)
   poseApi.updatePose(data, poseId)
