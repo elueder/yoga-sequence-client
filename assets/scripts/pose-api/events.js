@@ -35,13 +35,13 @@ const enableEdits = function (event) {
 
 const onUpdatePose = function (event) {
   event.preventDefault()
-  console.log('event is ', event)
+  // console.log('event is ', event)
   const poseId = event.target.getAttribute('data-id')
   const data = getFormFields(event.target)
   poseApi.updatePose(data, poseId)
     .then(poseApi.getPoses)
     .then(poseUi.getPosesSuccess)
-    // .then(poseUi.updatePoseSuccess)
+    .then(poseUi.updatePoseSuccess)
     .catch(poseUi.updatePoseError)
 }
 
