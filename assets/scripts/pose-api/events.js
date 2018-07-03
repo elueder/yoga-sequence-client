@@ -7,7 +7,6 @@ const poseUi = require('./ui')
 const onCreatePose = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // debugger
   if (data.pose.pose_name === '' && data.pose.muscle_action === '' && data.pose.cues === '') {
     $('#user-messages').html('')
     $('#user-messages').html(`<div class="alert alert-warning">
@@ -33,7 +32,6 @@ const onCreatePose = function (event) {
 
 const onGetPoses = function (event) {
   event.preventDefault()
-  // console.log('got poses')
   poseApi.getPoses()
     .then(poseUi.getPosesSuccess)
     .catch(poseUi.getPosesError)
@@ -75,7 +73,6 @@ const onUpdatePose = function (event) {
 
 const onDeletePose = function (event) {
   event.preventDefault()
-  console.log('you deleted it')
   const poseId = event.target.getAttribute('data-id')
   poseApi.deletePose(poseId)
     .then(poseApi.getPoses)
