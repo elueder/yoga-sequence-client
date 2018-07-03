@@ -14,14 +14,14 @@ const onCreatePose = function (event) {
       <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
       Please fill out form.
       </div>`)
-      // return
+    // return
   } else if (data.pose.pose_name === '') {
     $('#user-messages').html('')
     $('#user-messages').html(`<div class="alert alert-warning">
       <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
       Please give pose a name.
       </div>`)
-      // return
+    // return
   } else {
     poseApi.createPose(data)
       .then(poseApi.getPoses)
@@ -50,14 +50,27 @@ const enableEdits = function (event) {
 
 const onUpdatePose = function (event) {
   event.preventDefault()
-  // console.log('event is ', event)
   const poseId = event.target.getAttribute('data-id')
   const data = getFormFields(event.target)
-  poseApi.updatePose(data, poseId)
-    .then(poseApi.getPoses)
-    .then(poseUi.getPosesSuccess)
-    .then(poseUi.updatePoseSuccess)
-    .catch(poseUi.updatePoseError)
+  if (data.pose.pose_name === '' && data.pose.muscle_action === '' && data.pose.cues === '') {
+    $('#user-messages').html('')
+    $('#user-messages').html(`<div class="alert alert-warning">
+      <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+      Please fill out form.
+      </div>`)
+  } else if (data.pose.pose_name === '') {
+    $('#user-messages').html('')
+    $('#user-messages').html(`<div class="alert alert-warning">
+      <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+      Please give pose a name.
+      </div>`)
+  } else {
+    poseApi.updatePose(data, poseId)
+      .then(poseApi.getPoses)
+      .then(poseUi.getPosesSuccess)
+      .then(poseUi.updatePoseSuccess)
+      .catch(poseUi.updatePoseError)
+  }
 }
 
 const onDeletePose = function (event) {
