@@ -20,7 +20,8 @@ const createPoseSuccess = function () {
 const createPoseError = function () {
   $('#user-messages').html('')
   $('.content').html('')
-  $('#user-messages').html(`div class="alert alert-warning">
+  $('#user-messages').html(`
+    <div class="alert alert-warning">
     <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
     Error creating pose.
     </div>`)
@@ -39,7 +40,7 @@ const getPosesSuccess = function (data) {
     $('#user-messages').html(`
       <div class="alert alert-success alert-dismissable">
       <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
-      You haven't created any poses!
+      You don't have any poses! Try making some.
       </div>
       `)
   } else {
@@ -54,7 +55,8 @@ const getPosesSuccess = function (data) {
 const getPosesError = function () {
   $('#user-messages').html('')
   $('.content').html('')
-  $('#user-messages').html(`div class="alert alert-warning">
+  $('#user-messages').html(`
+    <div class="alert alert-warning">
     <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
     Error loading poses.
     </div>`)
@@ -80,7 +82,8 @@ const updatePoseSuccess = function (data, poseId) {
 const updatePoseError = function () {
   $('#user-messages').html('')
   $('.content').html('')
-  $('#user-messages').html(`div class="alert alert-warning">
+  $('#user-messages').html(`
+    <div class="alert alert-warning">
     <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
     Error updating pose.
     </div>`)
@@ -106,7 +109,8 @@ const deletePoseSuccess = function () {
 const deletePoseError = function () {
   $('#user-messages').html('')
   $('.content').html('')
-  $('#user-messages').html(`div class="alert alert-warning">
+  $('#user-messages').html(`
+    <div class="alert alert-warning">
     <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
     Error deleting pose.
     </div>`)
