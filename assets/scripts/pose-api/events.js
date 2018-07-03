@@ -6,14 +6,29 @@ const poseUi = require('./ui')
 
 const onCreatePose = function (event) {
   event.preventDefault()
-  // console.log('event.target is ', event.target)
   const data = getFormFields(event.target)
-  // console.log('data is ', data)
-  poseApi.createPose(data)
-    .then(poseApi.getPoses)
-    .then(poseUi.getPosesSuccess)
-    .then(poseUi.createPoseSuccess)
-    .catch(poseUi.createPoseError)
+  // debugger
+  if (data.pose.pose_name === '' && data.pose.muscle_action === '' && data.pose.cues === '') {
+    $('#user-messages').html('')
+    $('#user-messages').html(`<div class="alert alert-warning">
+      <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+      Please fill out form.
+      </div>`)
+      // return
+  } else if (data.pose.pose_name === '') {
+    $('#user-messages').html('')
+    $('#user-messages').html(`<div class="alert alert-warning">
+      <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+      Please give pose a name.
+      </div>`)
+      // return
+  } else {
+    poseApi.createPose(data)
+      .then(poseApi.getPoses)
+      .then(poseUi.getPosesSuccess)
+      .then(poseUi.createPoseSuccess)
+      .catch(poseUi.createPoseError)
+  }
 }
 
 const onGetPoses = function (event) {
