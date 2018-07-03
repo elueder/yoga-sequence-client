@@ -7,10 +7,10 @@
       <h2>Pose: {{pose.pose_name}}</h2>
       <input name="pose[pose_name]" class="hidden editable" type="text" value="{{pose.pose_name}}">
       <ul class="list-edit">
-        <li class="uneditable">Muscle action: {{pose.muscle_action}}</li>
-        <input name="pose[muscle_action]" class="hidden editable" type="text" value="{{pose.muscle_action}}">
-        <li class="uneditable">Cues: {{pose.cues}}</li>
-        <input name="pose[cues]" class="hidden editable" type="text" value="{{pose.cues}}">
+        <li class="uneditable">Muscle action: <span class="current-val">{{pose.muscle_action}}</span>
+        <input name="pose[muscle_action]" class="hidden editable" type="text" value="{{pose.muscle_action}}"></li>
+        <li class="uneditable">Cues: <span class="current-val">{{pose.cues}}</span>
+        <input name="pose[cues]" class="hidden editable" type="text" value="{{pose.cues}}"></li>
       </ul>
       <button class="update-pose btn btn-default" data-id="{{pose.id}}">Edit pose</button>
       <button class="save-button hidden btn btn-default" type="submit" data-id="{{pose.id}}">Save edits</button>

@@ -27,9 +27,9 @@ const onGetPoses = function (event) {
 const enableEdits = function (event) {
   event.preventDefault()
   $(this).parent('.save-pose').children('.editable').removeClass('hidden')
-  $(this).parent('.save-pose').children('.list-edit').children('.editable').removeClass('hidden')
+  $(this).parent('.save-pose').children('.list-edit').children('.uneditable').children('.editable').removeClass('hidden')
   $(this).parent('.save-pose').children('.save-button').removeClass('hidden')
-  $(this).parent('.save-pose').children('.list-edit').children('.uneditable').addClass('hidden')
+  $(this).parent('.save-pose').children('.list-edit').children('.uneditable').children('.current-val').addClass('hidden')
   $(this).parent('.save-pose').children('.update-pose').addClass('hidden')
 }
 
@@ -41,7 +41,7 @@ const onUpdatePose = function (event) {
   poseApi.updatePose(data, poseId)
     .then(poseApi.getPoses)
     .then(poseUi.getPosesSuccess)
-    .then(poseUi.updatePoseSuccess)
+    // .then(poseUi.updatePoseSuccess)
     .catch(poseUi.updatePoseError)
 }
 
